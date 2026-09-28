@@ -1,0 +1,16 @@
+.d3-chart {
+  width: 100%;
+  height: 450px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.d3-chart svg {
+  display: block;
+  margin: auto;
+}

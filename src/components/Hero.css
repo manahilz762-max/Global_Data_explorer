@@ -1,0 +1,23 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.hero-container {
+  width: min(1500px, 94%);
+  min-height: 100vh;
+  padding: 140px 0 110px;
+  gap: 100px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-title {
+  font-size: clamp(5rem, 8vw, 8.5rem);
+}
+
+.visual-card {
+  width: min(560px, 100%);
+}

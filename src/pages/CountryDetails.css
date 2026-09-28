@@ -1,0 +1,620 @@
+/* ================================
+   COUNTRY DETAILS PAGE
+================================ */
+
+.country-details-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(0, 220, 255, 0.08),
+      transparent 35%
+    ),
+    #05070b;
+
+  color: #ffffff;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.details-navbar {
+  height: 76px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(5, 7, 11, 0.9);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  backdrop-filter: blur(15px);
+}
+
+
+.details-logo {
+  color: white;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+
+.details-logo span {
+  color: #00d9ff;
+}
+
+
+.details-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+
+.details-nav-links a {
+  color: #8e99a8;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+
+.details-nav-links a:hover,
+.details-nav-links a.active {
+  color: #00d9ff;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.country-details-container {
+  width: min(1200px, 86%);
+  margin: auto;
+
+  padding: 55px 0 100px;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-link {
+  display: inline-block;
+
+  color: #7d8998;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  margin-bottom: 45px;
+
+  transition: 0.3s;
+}
+
+
+.back-link:hover {
+  color: #00d9ff;
+  transform: translateX(-4px);
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.country-hero {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  padding: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35);
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+.country-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  background: rgba(0, 217, 255, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  right: -100px;
+  top: -120px;
+}
+
+
+.country-symbol {
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 30px;
+
+  font-size: 64px;
+  font-weight: 800;
+
+  color: #00d9ff;
+
+  border: 1px solid rgba(0, 217, 255, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 217, 255, 0.15),
+      rgba(0, 217, 255, 0.03)
+    );
+
+  box-shadow:
+    0 0 45px rgba(0, 217, 255, 0.12);
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.country-heading {
+  position: relative;
+  z-index: 2;
+}
+
+
+.country-code {
+  color: #00d9ff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 10px;
+}
+
+
+.country-heading h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 6vw, 78px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+
+.country-heading p {
+  color: #8e99a8;
+
+  max-width: 600px;
+
+  line-height: 1.7;
+
+  margin-top: 20px;
+}
+
+
+/* ================================
+   STAT CARDS
+================================ */
+
+.country-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 25px;
+}
+
+
+.detail-card {
+  padding: 28px;
+
+  min-height: 145px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition: 0.3s;
+}
+
+
+.detail-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 217, 255, 0.3);
+
+  background: rgba(0, 217, 255, 0.05);
+}
+
+
+.detail-label {
+  display: block;
+
+  color: #647080;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 18px;
+}
+
+
+.detail-card strong {
+  display: block;
+
+  font-size: 25px;
+
+  margin-bottom: 8px;
+}
+
+
+.detail-card small {
+  color: #6e7988;
+
+  font-size: 12px;
+}
+
+
+/* ================================
+   INFORMATION
+================================ */
+
+.information-section {
+  margin-top: 100px;
+}
+
+
+.section-heading span {
+  color: #00d9ff;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.section-heading h2 {
+  font-size: 36px;
+
+  margin: 12px 0 30px;
+
+  letter-spacing: -1px;
+}
+
+
+.facts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+
+.fact-box {
+  padding: 25px;
+
+  border-left: 2px solid #00d9ff;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border-radius: 0 14px 14px 0;
+}
+
+
+.fact-box span {
+  display: block;
+
+  color: #687382;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+
+.fact-box strong {
+  font-size: 17px;
+}
+
+
+/* ================================
+   CTA
+================================ */
+
+.country-cta {
+  margin-top: 90px;
+
+  padding: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(0, 217, 255, 0.18);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(0, 217, 255, 0.09),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+
+.country-cta span {
+  color: #00d9ff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.country-cta h2 {
+  margin: 10px 0;
+
+  font-size: 30px;
+}
+
+
+.country-cta p {
+  color: #788493;
+
+  margin: 0;
+}
+
+
+.charts-button {
+  flex-shrink: 0;
+
+  padding: 14px 22px;
+
+  border-radius: 10px;
+
+  background: #00d9ff;
+
+  color: #031017;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  transition: 0.3s;
+}
+
+
+.charts-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 217, 255, 0.25);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.details-footer {
+  padding: 40px 7%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #647080;
+}
+
+
+.details-footer strong {
+  color: white;
+
+  letter-spacing: 2px;
+
+  font-size: 13px;
+}
+
+
+.details-footer p {
+  margin: 8px 0 0;
+
+  font-size: 12px;
+}
+
+
+/* ================================
+   NOT FOUND
+================================ */
+
+.country-not-found {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #05070b;
+
+  color: white;
+}
+
+
+.country-not-found span {
+  font-size: 100px;
+
+  font-weight: 900;
+
+  color: #00d9ff;
+}
+
+
+.country-not-found h1 {
+  font-size: 38px;
+}
+
+
+.country-not-found p {
+  color: #788493;
+
+  margin-bottom: 30px;
+}
+
+
+.back-button {
+  display: inline-block;
+
+  padding: 13px 22px;
+
+  background: #00d9ff;
+
+  color: #031017;
+
+  text-decoration: none;
+
+  border-radius: 9px;
+
+  font-weight: 700;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 950px) {
+
+  .country-stats,
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .country-hero {
+    padding: 35px;
+  }
+
+  .details-nav-links {
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .details-navbar {
+    padding: 0 5%;
+  }
+
+  .details-nav-links {
+    display: none;
+  }
+
+  .country-details-container {
+    width: 90%;
+  }
+
+  .country-hero {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 30px;
+  }
+
+  .country-symbol {
+    width: 90px;
+    height: 90px;
+
+    font-size: 42px;
+  }
+
+  .country-heading h1 {
+    font-size: 50px;
+  }
+
+  .country-stats,
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .country-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .details-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+}

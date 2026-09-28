@@ -1,0 +1,430 @@
+.globe-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(0, 217, 255, 0.08),
+      transparent 35%
+    ),
+    #070a0f;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.globe-navbar {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  background: rgba(7, 10, 15, 0.85);
+  backdrop-filter: blur(15px);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.globe-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.globe-logo span {
+  color: #00d9ff;
+}
+
+.globe-nav-links {
+  display: flex;
+  gap: 26px;
+}
+
+.globe-nav-links a {
+  color: #8c98a8;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.globe-nav-links a:hover,
+.globe-nav-links a.active {
+  color: #00d9ff;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.globe-container {
+  width: min(1200px, 88%);
+  margin: auto;
+  padding: 90px 0 100px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.globe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 55px;
+}
+
+.globe-label {
+  color: #00d9ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.globe-header h1 {
+  margin: 18px 0;
+  font-size: clamp(45px, 7vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -4px;
+}
+
+.globe-header h1 span {
+  color: #00d9ff;
+}
+
+.globe-header p {
+  max-width: 550px;
+  color: #8c98a8;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.globe-tech-badge {
+  min-width: 150px;
+  padding: 20px;
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  background: rgba(0, 217, 255, 0.04);
+  text-align: center;
+}
+
+.globe-tech-badge strong {
+  display: block;
+  color: #00d9ff;
+  font-size: 32px;
+}
+
+.globe-tech-badge span {
+  display: block;
+  margin-top: 8px;
+  color: #738091;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   GLOBE CARD
+========================= */
+
+.globe-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 18, 25, 0.85);
+  overflow: hidden;
+}
+
+.globe-card-header {
+  min-height: 90px;
+  padding: 20px 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.globe-card-header span {
+  color: #738091;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.globe-card-header h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+
+.globe-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #50dca0;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.globe-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #50dca0;
+  box-shadow: 0 0 12px #50dca0;
+}
+
+/* =========================
+   CANVAS
+========================= */
+
+.globe-canvas {
+  height: 600px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 217, 255, 0.07),
+      transparent 55%
+    );
+}
+
+.globe-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.globe-hint {
+  padding: 16px;
+  text-align: center;
+
+  color: #667282;
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   DATA CARDS
+========================= */
+
+.globe-data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.globe-data-card {
+  padding: 28px;
+  background: #0d1219;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: 0.3s;
+}
+
+.globe-data-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 217, 255, 0.35);
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.08);
+}
+
+.globe-data-card span {
+  color: #738091;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.globe-data-card strong {
+  display: block;
+  margin: 12px 0 6px;
+
+  color: #00d9ff;
+  font-size: 32px;
+}
+
+.globe-data-card small {
+  color: #667282;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.globe-cta {
+  margin-top: 80px;
+  padding: 45px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0, 217, 255, 0.08),
+      rgba(120, 90, 255, 0.05)
+    );
+}
+
+.globe-cta span {
+  color: #00d9ff;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.globe-cta h2 {
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+.globe-cta p {
+  margin: 0;
+  color: #7f8b9a;
+}
+
+.globe-cta-button {
+  padding: 15px 24px;
+
+  color: #05080c;
+  background: #00d9ff;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.globe-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.25);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.globe-footer {
+  padding: 35px 6%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.globe-footer strong {
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.globe-footer p {
+  margin: 6px 0 0;
+  color: #667282;
+  font-size: 12px;
+}
+
+.globe-footer > span {
+  color: #667282;
+  font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .globe-nav-links {
+    display: none;
+  }
+
+  .globe-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .globe-data-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .globe-canvas {
+    height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .globe-container {
+    width: 92%;
+    padding-top: 55px;
+  }
+
+  .globe-header h1 {
+    letter-spacing: -2px;
+  }
+
+  .globe-card-header {
+    padding: 18px;
+  }
+
+  .globe-canvas {
+    height: 400px;
+  }
+
+  .globe-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .globe-cta {
+    padding: 30px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .globe-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+.country-tooltip {
+  min-width: 120px;
+  padding: 12px 15px;
+
+  background: rgba(7, 12, 18, 0.95);
+
+  border: 1px solid rgba(0, 217, 255, 0.4);
+
+  box-shadow:
+    0 0 25px rgba(0, 217, 255, 0.15);
+
+  backdrop-filter: blur(12px);
+
+  pointer-events: none;
+}
+
+.country-tooltip strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.country-tooltip span {
+  display: block;
+
+  color: #00d9ff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}

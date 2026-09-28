@@ -1,0 +1,702 @@
+/* =========================================================
+   GLOBAL DATA EXPLORER
+   GLOBAL DESIGN SYSTEM
+   Based on Home / Hero theme
+========================================================= */
+
+
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+
+:root {
+  /* Background */
+  --bg-main: #030711;
+  --bg-secondary: #070d18;
+  --bg-surface: #0a1220;
+  --bg-surface-light: #0f1929;
+
+  /* Primary text */
+  --text-primary: #f8fafc;
+
+  /* Secondary text */
+  --text-secondary: #c1cad6;
+
+  /* Muted text */
+  --text-muted: #94a3b8;
+
+  /* Very muted text */
+  --text-faint: #64748b;
+
+  /* Main accent */
+  --accent: #38bdf8;
+  --accent-light: #7dd3fc;
+
+  /* Accent variations */
+  --accent-soft: rgba(56, 189, 248, 0.10);
+  --accent-border: rgba(56, 189, 248, 0.25);
+  --accent-glow: rgba(56, 189, 248, 0.15);
+
+  /* Borders */
+  --border: rgba(148, 163, 184, 0.15);
+  --border-soft: rgba(148, 163, 184, 0.10);
+  --border-strong: rgba(148, 163, 184, 0.25);
+
+  /* Status */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  /* Radius */
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm:
+    0 8px 25px rgba(0, 0, 0, 0.18);
+
+  --shadow-md:
+    0 20px 60px rgba(0, 0, 0, 0.28);
+
+  /* Layout */
+  --page-width: 1400px;
+  --page-width-percent: 92%;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg-main);
+
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-width: 320px;
+
+  background: var(--bg-main);
+
+  color: var(--text-primary);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+
+  background: var(--bg-main);
+}
+
+
+/* =========================================================
+   ELEMENT RESET
+========================================================= */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030711;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #26364a;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b526d;
+}
+
+
+/* =========================================================
+   COMMON PAGE WRAPPER
+========================================================= */
+
+.page {
+  position: relative;
+
+  min-height: calc(100vh - 78px);
+
+  background: var(--bg-main);
+
+  color: var(--text-primary);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.page-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    var(--page-width),
+    var(--page-width-percent)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   COMMON PAGE HEADER
+========================================================= */
+
+.page-header {
+  padding: 70px 0 35px;
+}
+
+.page-eyebrow {
+  margin: 0 0 15px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.page-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.page-description {
+  max-width: 650px;
+
+  margin: 18px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.page-section {
+  position: relative;
+
+  padding: 40px 0 80px;
+}
+
+
+/* =========================================================
+   COMMON SURFACE
+========================================================= */
+
+.surface {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.035),
+      transparent 45%
+    ),
+    rgba(10, 18, 32, 0.72);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.card {
+  background:
+    rgba(10, 18, 32, 0.72);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   COMMON TEXT
+========================================================= */
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-faint {
+  color: var(--text-faint);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 12px 20px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Primary button */
+
+.btn-primary {
+  background: var(--accent);
+
+  color: #030711;
+
+  box-shadow:
+    0 8px 25px rgba(56, 189, 248, 0.12);
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(56, 189, 248, 0.18);
+}
+
+
+/* Secondary button */
+
+.btn-secondary {
+  background: rgba(15, 23, 42, 0.45);
+
+  border: 1px solid var(--border-strong);
+
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-border);
+
+  color: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+
+/* Ghost button */
+
+.btn-ghost {
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+  color: var(--accent);
+
+  background: var(--accent-soft);
+}
+
+
+/* =========================================================
+   COMMON INPUT
+========================================================= */
+
+.input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-sm);
+
+  color: var(--text-primary);
+
+  outline: none;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--text-faint);
+}
+
+.input:focus {
+  border-color: var(--accent-border);
+
+  box-shadow:
+    0 0 0 3px rgba(56, 189, 248, 0.06);
+}
+
+
+/* =========================================================
+   COMMON TABLE
+========================================================= */
+
+.data-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: transparent;
+}
+
+.data-table th {
+  padding: 14px 16px;
+
+  color: var(--text-faint);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-align: left;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table td {
+  padding: 15px 16px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.data-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.035);
+}
+
+.data-table td strong {
+  color: var(--text-primary);
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+.status-success {
+  color: var(--success);
+}
+
+.status-success::before {
+  background: var(--success);
+
+  box-shadow:
+    0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+.status-warning {
+  color: var(--warning);
+}
+
+.status-warning::before {
+  background: var(--warning);
+}
+
+.status-danger {
+  color: var(--danger);
+}
+
+.status-danger::before {
+  background: var(--danger);
+}
+
+
+/* =========================================================
+   DECORATIVE GRID
+   Can be reused by pages
+========================================================= */
+
+.page-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(148, 163, 184, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      transparent 90%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIVE GLOW
+========================================================= */
+
+.page-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+.page-glow-blue {
+  background: rgba(56, 189, 248, 0.07);
+}
+
+.page-glow-purple {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+  width: 100%;
+
+  height: 1px;
+
+  background: var(--border);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  padding: 70px 30px;
+
+  text-align: center;
+
+  border: 1px dashed var(--border-strong);
+
+  border-radius: var(--radius-md);
+
+  background: rgba(10, 18, 32, 0.45);
+}
+
+.empty-state h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+}
+
+.empty-state p {
+  margin: 8px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   Keep the same desktop visual language
+========================================================= */
+
+@media (max-width: 900px) {
+  .page-container {
+    width: 88%;
+  }
+
+  .page-header {
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    width: 88%;
+  }
+
+  .page-header {
+    padding-top: 45px;
+  }
+
+  .page-description {
+    font-size: 14px;
+  }
+}
